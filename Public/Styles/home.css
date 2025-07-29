@@ -2,6 +2,24 @@
     padding: 0px;
     margin: 0px;
 }
+#navbar{
+    color:#EB8BA5;
+    background-color: #B0EACD;
+    font-family: "Playwrite HU", cursive;
+    font-weight: 400;
+    font-size: 40px;
+    font-style: normal;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+}
+#butterfly{
+    position: absolute;
+    left: 240px;
+    top: 35px;
+
+}
+
 body{
     background-color: #FFF8F0;
 }
