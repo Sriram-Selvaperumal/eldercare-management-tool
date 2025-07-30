@@ -46,4 +46,17 @@ body {
 #navlinks a:hover{
     color: #EB8BA5;
 }
+#hero{
+    margin-top: 20px;
+    color: #3C3C3C;
+    font-family: "Playwrite HU", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+#hero h5{
+    color: #7C7C7C;
+}
 
+#hero p{
+    padding: 20px;
+}
