@@ -76,6 +76,12 @@ body {
     border-width: 5px;
     border-color: #EB8BA5;
     border-style: solid;
+    transition: transform 1s ease;
+}
+#residents:hover{
+    cursor: pointer;
+    transition: 2s ease;
+    transform: scale(1.15);
 }
 #residents img{
      margin-top: 30px;
@@ -89,6 +95,12 @@ body {
     border-width: 5px;
     border-color: #EB8BA5;
     border-style: solid;
+    transition: transform 1s ease;
+}
+#staffs:hover{
+    cursor: pointer;
+    transition: 2s ease;
+    transform: scale(1.15);
 }
 #staffs img{
      margin-top: 30px;
