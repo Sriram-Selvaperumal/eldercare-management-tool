@@ -1,0 +1,48 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+body {
+    background-color: #FDEEEF;
+}
+
+#navbar {
+    display: flex;
+    font-family: "Playwrite HU", cursive;
+    font-weight: 400;
+    width: 100%;
+    font-style: normal;
+    background-color: #B0EACD;
+}
+
+#header {
+    color: #EB8BA5;
+    font-size: 40px;
+    padding: 20px;
+    display: inline-block;
+
+}
+
+#butterfly {
+    position: absolute;
+    left: 240px;
+    top: 35px;
+    display: inline-block;
+
+}
+#navlinks{
+    position: absolute;
+    left: 70%;
+    top: 50px;
+}
+#navlinks li{
+    display: inline;
+    padding-left: 30px;
+}
+#navlinks a{
+    color: #2D2D2D;
+    text-decoration: none;
+}
+#navlinks a:hover{
+    color: #EB8BA5;
+}
