@@ -1,17 +1,17 @@
 * {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
+    font-family: "Playwrite HU", cursive;
 }
+
 body {
     background-color: #FDEEEF;
 }
 
 #navbar {
     display: flex;
-    font-family: "Playwrite HU", cursive;
     font-weight: 400;
     width: 100%;
-    font-style: normal;
     background-color: #B0EACD;
 }
 
@@ -20,7 +20,6 @@ body {
     font-size: 40px;
     padding: 20px;
     display: inline-block;
-
 }
 
 #butterfly {
@@ -28,22 +27,25 @@ body {
     left: 240px;
     top: 35px;
     display: inline-block;
-
 }
-#navlinks{
+
+#navlinks {
     position: absolute;
     left: 70%;
     top: 50px;
 }
-#navlinks li{
+
+#navlinks li {
     display: inline;
     padding-left: 30px;
 }
-#navlinks a{
+
+#navlinks a {
     color: #2D2D2D;
     text-decoration: none;
 }
-#navlinks a:hover{
+
+#navlinks a:hover {
     color: #EB8BA5;
 }
 
@@ -75,29 +77,31 @@ body {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-#pop_bg {
+#pop_bg, #details_bg {
     background-color: rgba(45, 45, 45, 0.4);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: none; /* Hidden by default */
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
-#popup {
-    background-color: #faf3eb;
-    padding: 20px 30px;
+#popup, #details_popup {
+    background-color: #fff8f0;
+    padding: 20px;
     border-radius: 12px;
-    width: 300px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    color: #3c3c3c;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90%;
+    overflow-y: auto;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
-#popup h2 {
+#popup h2, #details_popup h2 {
     text-align: center;
     margin-bottom: 15px;
     color: #eb8ba5;
@@ -111,6 +115,7 @@ body {
 }
 
 #popup input,
+#popup select,
 #popup textarea {
     width: 100%;
     padding: 8px;
@@ -118,6 +123,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 6px;
     font-size: 14px;
+    font-family: "Playwrite HU", cursive;
 }
 
 #popup textarea {
@@ -125,7 +131,7 @@ body {
     height: 60px;
 }
 
-#popup button {
+#popup button, #close_details {
     margin-top: 15px;
     width: 100%;
     padding: 10px;
@@ -138,6 +144,74 @@ body {
     transition: background-color 0.3s ease;
 }
 
-#popup button:hover {
+#popup button:hover, #close_details:hover {
     background-color: #9eddbd;
+}
+
+#res_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+}
+
+.resident-card {
+    background-color: #faf3eb;
+    border-radius: 10px;
+    padding: 15px;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resident-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.resident-card h3 {
+    color: #eb8ba5;
+    margin-bottom: 5px;
+}
+
+#details_content p {
+    margin: 8px 0;
+    color: #3c3c3c;
+    font-size: 15px;
+}
+
+.card-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.card-buttons button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: "Playwrite HU", cursive;
+}
+
+.edit-btn {
+    background-color: #b0eacd;
+    color: #3c3c3c;
+}
+
+.delete-btn {
+    background-color: #eb8ba5;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #9eddbd;
+}
+
+.delete-btn:hover {
+    background-color: #d9738b;
 }
