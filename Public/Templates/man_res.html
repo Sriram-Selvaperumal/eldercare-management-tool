@@ -17,12 +17,7 @@
     <div id="navbar">
         <nav id="header">ElderCare</nav>
         <div id="butterfly">
-            <img
-                src="C:/projects/ElderCare/eldercare-management-tool/Public/Assets/Icons/butterfly_colored.png"
-                alt="Butterfly"
-                width="40"
-                height="40"
-            />
+            <img src="C:/projects/ElderCare/eldercare-management-tool/Public/Assets/Icons/butterfly_colored.png" alt="Butterfly" width="40" height="40" />
         </div>
         <div id="navlinks">
             <ul>
@@ -34,21 +29,48 @@
         </div>
     </div>
 
+    
     <div id="pop_bg">
         <div id="popup">
-            <h2>Add Resident</h2>
+            <h2 id="popup_title">Add Resident</h2>
             <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter name" required />
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter full name" required>
 
-                <label for="age">Age:</label>
-                <input type="number" id="age" name="age" placeholder="Enter age" required />
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" placeholder="Enter age" required>
 
-                <label for="notes">Notes:</label>
-                <textarea id="notes" name="notes" placeholder="Additional details"></textarea>
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="contact">Admitter’s contact number</label>
+                <input type="tel" id="contact" name="contact" placeholder="Enter phone number" required>
+
+                <label for="medical">Medical Conditions</label>
+                <textarea id="medical" name="medical" placeholder="List any conditions"></textarea>
+
+                <label for="notes">Additional Notes</label>
+                <textarea id="notes" name="notes" placeholder="Any other details"></textarea>
 
                 <button type="submit">Add</button>
             </form>
+        </div>
+    </div>
+
+    
+    <div id="details_bg">
+        <div id="details_popup">
+            <h2>Resident Details</h2>
+            <div id="details_content"></div>
+            <button id="close_details">Close</button>
         </div>
     </div>
 
@@ -58,6 +80,6 @@
 
     <div id="res_container"></div>
 
-    <script src="C:\projects\ElderCare\eldercare-management-tool\Public\Script\man_res.js"></script>
+    <script src="C:/projects/ElderCare/eldercare-management-tool/Public/Script/man_res.js"></script>
 </body>
 </html>
