@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Staffs</title>
+    <link rel="icon" href="C:/projects/ElderCare/eldercare-management-tool/Public/Assets/Icons/butterfly_colored.png" />
+    <link rel="stylesheet" href="C:/projects/ElderCare/eldercare-management-tool/Public/Styles/man_staff.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+HU&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div id="navbar">
+        <nav id="header">ElderCare</nav>
+        <div id="butterfly">
+            <img src="C:/projects/ElderCare/eldercare-management-tool/Public/Assets/Icons/butterfly_colored.png" alt="Butterfly" width="40" height="40" />
+        </div>
+        <div id="navlinks">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="">Residents</a></li>
+                <li><a href="">Staff</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <div id="pop_bg">
+        <div id="popup">
+            <h2 id="popup_title">Add Staff</h2>
+            <form>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter full name" required>
+
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" placeholder="Enter age" required>
+
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="contact">contact number</label>
+                <input type="tel" id="contact" name="contact" placeholder="Enter phone number" required>
+
+                <label for="medical">Mail id</label>
+                <textarea id="medical" name="medical" placeholder="List any conditions"></textarea>
+
+                <label for="notes">Additional Notes</label>
+                <textarea id="notes" name="notes" placeholder="Any other details"></textarea>
+
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <div id="details_bg">
+        <div id="details_popup">
+            <h2>Resident Details</h2>
+            <div id="details_content"></div>
+            <button id="close_details">Close</button>
+        </div>
+    </div>
+
+    <div id="add_button">
+        <button id="add">+</button>
+    </div>
+
+    <div id="res_container"></div>
+
+    <script src="C:/projects/ElderCare/eldercare-management-tool/Public/Script/man_staff.js"></script>
+</body>
+</html>
