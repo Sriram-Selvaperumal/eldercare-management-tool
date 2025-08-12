@@ -8,64 +8,58 @@ const detailsBg = document.getElementById("details_bg");
 const detailsContent = document.getElementById("details_content");
 const closeDetailsBtn = document.getElementById("close_details");
 
+let staff = JSON.parse(localStorage.getItem("staff")) || [];
 
-let residents = JSON.parse(localStorage.getItem("residents")) || [];
-
-
-function saveResidents() {
-    localStorage.setItem("residents", JSON.stringify(residents));
+function saveStaff() {
+    localStorage.setItem("staff", JSON.stringify(staff));
 }
 
-
-function createResidentCard(resident, index) {
+function createStaffCard(member, index) {
     const card = document.createElement("div");
     card.classList.add("resident-card");
     card.innerHTML = `
-        <h3>${resident.name}</h3>
-        <p>Age: ${resident.age}</p>
+        <h3>${member.name}</h3>
+        <p>Age: ${member.age}</p>
         <div class="card-buttons">
             <button class="edit-btn">Edit</button>
             <button class="delete-btn">Delete</button>
         </div>
     `;
 
-    
     card.addEventListener("click", (e) => {
         if (e.target.tagName.toLowerCase() === "button") return;
         detailsContent.innerHTML = `
-            <p><strong>Name:</strong> ${resident.name}</p>
-            <p><strong>Age:</strong> ${resident.age}</p>
-            <p><strong>Gender:</strong> ${resident.gender || "N/A"}</p>
-            <p><strong>Date of Birth:</strong> ${resident.dob || "N/A"}</p>
-            <p><strong>Contact:</strong> ${resident.contact || "N/A"}</p>
-            <p><strong>Medical Conditions:</strong> ${resident.medical || "None"}</p>
-            <p><strong>Additional Notes:</strong> ${resident.notes || "None"}</p>
+            <p><strong>Name:</strong> ${member.name}</p>
+            <p><strong>Age:</strong> ${member.age}</p>
+            <p><strong>Gender:</strong> ${member.gender || "N/A"}</p>
+            <p><strong>Date of Birth:</strong> ${member.dob || "N/A"}</p>
+            <p><strong>Contact:</strong> ${member.contact || "N/A"}</p>
+            <p><strong>Medical Conditions:</strong> ${member.medical || "None"}</p>
+            <p><strong>Additional Notes:</strong> ${member.notes || "None"}</p>
         `;
         detailsBg.style.display = "flex";
     });
 
-    
     card.querySelector(".delete-btn").addEventListener("click", () => {
-        residents.splice(index, 1);
-        saveResidents();
-        renderResidents();
+        staff.splice(index, 1);
+        saveStaff();
+        renderStaff();
     });
 
-    
     card.querySelector(".edit-btn").addEventListener("click", () => {
         popupTitle.textContent = "Edit Staff";
-        document.getElementById("name").value = resident.name;
-        document.getElementById("age").value = resident.age;
-        document.getElementById("gender").value = resident.gender;
-        document.getElementById("dob").value = resident.dob;
-        document.getElementById("contact").value = resident.contact;
-        document.getElementById("medical").value = resident.medical;
-        document.getElementById("notes").value = resident.notes;
+        document.getElementById("name").value = member.name;
+        document.getElementById("age").value = member.age;
+        document.getElementById("gender").value = member.gender;
+        document.getElementById("dob").value = member.dob;
+        document.getElementById("contact").value = member.contact;
+        document.getElementById("medical").value = member.medical;
+        document.getElementById("notes").value = member.notes;
         popBg.style.display = "flex";
 
         form.onsubmit = function(e) {
             e.preventDefault();
-            residents[index] = {
+            staff[index] = {
                 name: document.getElementById("name").value.trim(),
                 age: document.getElementById("age").value.trim(),
                 gender: document.getElementById("gender").value,
@@ -74,8 +68,8 @@ function createResidentCard(resident, index) {
                 medical: document.getElementById("medical").value.trim(),
                 notes: document.getElementById("notes").value.trim()
             };
-            saveResidents();
-            renderResidents();
+            saveStaff();
+            renderStaff();
             form.reset();
             popBg.style.display = "none";
             popupTitle.textContent = "Add Staff";
@@ -86,16 +80,14 @@ function createResidentCard(resident, index) {
     resContainer.appendChild(card);
 }
 
-
-function renderResidents() {
+function renderStaff() {
     resContainer.innerHTML = "";
-    residents.forEach((resident, index) => createResidentCard(resident, index));
+    staff.forEach((member, index) => createStaffCard(member, index));
 }
-
 
 const defaultSubmitHandler = (e) => {
     e.preventDefault();
-    const resident = {
+    const member = {
         name: document.getElementById("name").value.trim(),
         age: document.getElementById("age").value.trim(),
         gender: document.getElementById("gender").value,
@@ -104,14 +96,13 @@ const defaultSubmitHandler = (e) => {
         medical: document.getElementById("medical").value.trim(),
         notes: document.getElementById("notes").value.trim()
     };
-    if (!resident.name || !resident.age) return;
-    residents.push(resident);
-    saveResidents();
-    renderResidents();
+    if (!member.name || !member.age) return;
+    staff.push(member);
+    saveStaff();
+    renderStaff();
     form.reset();
     popBg.style.display = "none";
 };
-
 
 addBtn.addEventListener("click", () => {
     popupTitle.textContent = "Add Staff";
@@ -120,18 +111,15 @@ addBtn.addEventListener("click", () => {
     form.onsubmit = defaultSubmitHandler;
 });
 
-
 popBg.addEventListener("click", (e) => {
     if (e.target === popBg) {
         popBg.style.display = "none";
     }
 });
 
-
 closeDetailsBtn.addEventListener("click", () => {
     detailsBg.style.display = "none";
 });
-
 
 detailsBg.addEventListener("click", (e) => {
     if (e.target === detailsBg) {
@@ -139,6 +127,5 @@ detailsBg.addEventListener("click", (e) => {
     }
 });
 
-
 form.addEventListener("submit", defaultSubmitHandler);
-renderResidents();
+renderStaff();
