@@ -8,14 +8,11 @@ const detailsBg = document.getElementById("details_bg");
 const detailsContent = document.getElementById("details_content");
 const closeDetailsBtn = document.getElementById("close_details");
 
-
 let residents = JSON.parse(localStorage.getItem("residents")) || [];
-
 
 function saveResidents() {
     localStorage.setItem("residents", JSON.stringify(residents));
 }
-
 
 function createResidentCard(resident, index) {
     const card = document.createElement("div");
@@ -29,7 +26,6 @@ function createResidentCard(resident, index) {
         </div>
     `;
 
-    
     card.addEventListener("click", (e) => {
         if (e.target.tagName.toLowerCase() === "button") return;
         detailsContent.innerHTML = `
@@ -44,14 +40,12 @@ function createResidentCard(resident, index) {
         detailsBg.style.display = "flex";
     });
 
-    
     card.querySelector(".delete-btn").addEventListener("click", () => {
         residents.splice(index, 1);
         saveResidents();
         renderResidents();
     });
 
-    
     card.querySelector(".edit-btn").addEventListener("click", () => {
         popupTitle.textContent = "Edit Resident";
         document.getElementById("name").value = resident.name;
@@ -86,12 +80,10 @@ function createResidentCard(resident, index) {
     resContainer.appendChild(card);
 }
 
-
 function renderResidents() {
     resContainer.innerHTML = "";
     residents.forEach((resident, index) => createResidentCard(resident, index));
 }
-
 
 const defaultSubmitHandler = (e) => {
     e.preventDefault();
@@ -112,7 +104,6 @@ const defaultSubmitHandler = (e) => {
     popBg.style.display = "none";
 };
 
-
 addBtn.addEventListener("click", () => {
     popupTitle.textContent = "Add Resident";
     form.reset();
@@ -120,25 +111,21 @@ addBtn.addEventListener("click", () => {
     form.onsubmit = defaultSubmitHandler;
 });
 
-
 popBg.addEventListener("click", (e) => {
     if (e.target === popBg) {
         popBg.style.display = "none";
     }
 });
 
-
 closeDetailsBtn.addEventListener("click", () => {
     detailsBg.style.display = "none";
 });
-
 
 detailsBg.addEventListener("click", (e) => {
     if (e.target === detailsBg) {
         detailsBg.style.display = "none";
     }
 });
-
 
 form.addEventListener("submit", defaultSubmitHandler);
 renderResidents();
