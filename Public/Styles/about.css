@@ -55,3 +55,11 @@ body {
     align-items: center;
     text-align: center;
 }
+#pics {
+    display: flex;              
+    position: relative;
+    align-items: center;
+    justify-content: center;    
+    gap: 50px;                  
+    text-align: center;
+}
