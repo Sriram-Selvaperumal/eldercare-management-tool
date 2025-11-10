@@ -26,14 +26,15 @@ The tool emphasizes accessibility, usability, and clarity, making it ideal for e
 - **No Backend:** Currently a static frontend application
 - **File Structure:**
 eldercare-management-tool/
-├── index.html # Main entry point
-├── about.html # About page
-├── contact.html # Contact page
-├── css/ # Stylesheets
-│ └── style.css
-├── js/ # JavaScript files
-│ └── script.js
-└── images/ # Static images
+├── index.html        # Main entry point (Home page)
+├── about.html        # About page
+├── contact.html      # Contact page
+├── css/              # Stylesheets
+│   └── style.css     # Main CSS file
+├── js/               # JavaScript files
+│   └── script.js     # Main JS file
+└── images/           # Static images used in the project
+
 
 ---
 
